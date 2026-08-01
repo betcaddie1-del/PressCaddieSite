@@ -275,15 +275,6 @@
     box-shadow: 0 40px 90px -30px rgba(0,0,0,0.75);
     text-align: left;
   }
-  .phone-sbar {
-    background: var(--green-deep); color: rgba(242,236,221,0.85);
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 9px 20px 0; font-size: 11px; font-weight: 500;
-  }
-  .sbar-right { display: flex; align-items: center; gap: 5px; }
-  .sbar-cell { width: 14px; height: 8px; border-radius: 2px; background: rgba(242,236,221,0.55); }
-  .sbar-batt { width: 20px; height: 9px; border: 1px solid rgba(242,236,221,0.55); border-radius: 2.5px; position: relative; }
-  .sbar-batt::after { content: ''; position: absolute; inset: 1.5px; right: 5px; background: var(--win); border-radius: 1px; }
   .phone-statusbar {
     background: var(--green-deep);
     display: flex; justify-content: space-between; align-items: center;
@@ -370,7 +361,15 @@
   .lamt.flash { animation: flashamt 0.7s ease; }
   @keyframes flashamt { 0% { transform: scale(1); } 30% { transform: scale(1.18); } 100% { transform: scale(1); } }
   @media (max-width: 860px) {
-    .demo-grid { grid-template-columns: 1fr; justify-items: center; }
+    .demo-grid { grid-template-columns: 1fr; justify-items: center; gap: 22px; margin-top: 3svh; }
+    .demo-scene { padding-top: 8svh; padding-bottom: 8svh; }
+    .phone { width: min(300px, 82vw); }
+    .phone-body { padding: 14px; }
+    .prow { padding: 8px 10px; margin-bottom: 6px; }
+    .phone-label { margin-bottom: 9px; }
+    .phone-btn { padding: 12px; font-size: 14px; }
+    .demo-ledger { width: min(340px, 88vw); }
+    .demo-scene h2 { font-size: clamp(26px, 6vw, 40px) !important; }
   }
 
   /* ── SCENE 2: THE LEDGER (signature) ────────────── */
@@ -686,7 +685,6 @@
   <div class="demo-grid">
     <!-- Phone: score entry -->
     <div class="phone rv d2" id="phone">
-      <div class="phone-sbar mono"><span>9:41</span><span class="sbar-right"><span class="sbar-cell"></span><span class="sbar-batt"></span></span></div>
       <div class="phone-statusbar mono"><span>9:41</span><span class="psb-right"><svg width="15" height="10" viewBox="0 0 15 10" fill="currentColor"><rect x="0" y="6" width="2.5" height="4" rx="0.8"/><rect x="4" y="4" width="2.5" height="6" rx="0.8"/><rect x="8" y="2" width="2.5" height="8" rx="0.8"/><rect x="12" y="0" width="2.5" height="10" rx="0.8" opacity="0.35"/></svg><svg width="20" height="10" viewBox="0 0 20 10" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="16" height="9" rx="2.5"/><rect x="2.2" y="2.2" width="10" height="5.6" rx="1.2" fill="currentColor" stroke="none"/><rect x="17.8" y="3" width="1.8" height="4" rx="0.9" fill="currentColor" stroke="none"/></svg></span></div>
       <div class="phone-top">
         <span class="phone-brand">Press Caddie</span>
